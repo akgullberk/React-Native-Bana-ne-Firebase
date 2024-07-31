@@ -8,7 +8,7 @@ const Navigation = () => {
 
     const AuthStack = () => {
         return (
-            <Stack.Navigator>
+            <Stack.Navigator screenOptions={{headerShown: false}}>
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Sign" component={Sign} />
             </Stack.Navigator>
@@ -16,7 +16,7 @@ const Navigation = () => {
     }
 
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="AuthStack" component={AuthStack} />
         </Stack.Navigator>
     )

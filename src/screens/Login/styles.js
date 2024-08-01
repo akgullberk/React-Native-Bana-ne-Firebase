@@ -9,5 +9,10 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         
     },
+    header:{
+        color: 'green',
+        margin: windowHeight * 0.02,
+        fontSize: windowHeight * 0.2
+    }
     
 })

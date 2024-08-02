@@ -1,8 +1,10 @@
 import {Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { styles } from './styles'
 import {Input,Button} from '../../components'
 import { Formik } from 'formik'
+import auth from '@react-native-firebase/auth'
+import { showMessage} from "react-native-flash-message";
 
 const initialFormValues={
   usermail: '',
@@ -10,13 +12,27 @@ const initialFormValues={
 }
 
 const Login = ({navigation}) => {
+  const [loading, setLoading] = useState(false)
 
   function handleSignUp() {
     navigation.navigate('Sign')
   }
 
-  function handleFormSubmit(formValues) {
-    console.log(formValues)
+  async function handleFormSubmit(formValues) {
+    try {
+      setLoading(true)
+      await auth().signInWithEmailAndPassword(formValues.usermail, formValues.password);
+    } catch (error) {
+      console.log(error)
+      showMessage({
+        message: error.code,
+        type: "danger",
+      });
+      setLoading(false)
+      
+    }
+    
+    
     
   }
 
@@ -37,7 +53,7 @@ const Login = ({navigation}) => {
           onType={handleChange('password')} 
           placeholder="Password" />
 
-          <Button buttonName="Login" onPress={handleSubmit}/>
+          <Button buttonName="Login" onPress={handleSubmit} loading={loading}/>
           </>
           )}
         </Formik>

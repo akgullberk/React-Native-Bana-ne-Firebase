@@ -2,6 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {Login, Sign} from "../screens";
 
+
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
@@ -18,7 +19,9 @@ const Navigation = () => {
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="AuthStack" component={AuthStack} />
-        </Stack.Navigator>
+        </Stack.Navigator >
+        
+        
     )
 }
 

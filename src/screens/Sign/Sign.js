@@ -1,8 +1,12 @@
 import {Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { styles } from './styles'
 import {Input,Button} from '../../components'
 import { Formik } from 'formik'
+import auth from '@react-native-firebase/auth'
+import { showMessage} from "react-native-flash-message";
+
+
 
 const initialFormValues={
   usermail: '',
@@ -11,12 +15,36 @@ const initialFormValues={
 }
 
 const Sign = ({navigation}) => {
+  const [loading, setLoading] = useState(false)
   function handleLogin() {
     navigation.goBack()
   }
 
-  function handleFormSubmit(formValues) {
-    console.log(formValues)
+  async function handleFormSubmit(formValues) {
+    if(formValues.password !== formValues.repassword) {
+      showMessage({
+        message: "Passwords don't match",
+        type: "danger",
+      });
+    }
+    else{
+      try {
+        await auth().createUserWithEmailAndPassword(formValues.usermail, formValues.repassword);
+        showMessage({
+          message: "Sign Up Successful",
+          type: "success",
+        });
+        navigation.navigate('Login')
+        setLoading(false)
+      } catch (error) {
+        showMessage({
+          message: error.code,
+          type: "danger",
+        });
+        setLoading(false)
+      }
+    }
+    
     
   }
   
@@ -41,7 +69,7 @@ const Sign = ({navigation}) => {
           onType={handleChange('repassword')} 
           placeholder="Repeat Password" />
 
-        <Button buttonName="Sign Up" onPress={handleSubmit}/>
+        <Button buttonName="Sign Up" loading={loading} onPress={handleSubmit}/>
 
           </>
           )}

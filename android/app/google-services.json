@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "288473003287",
+    "project_id": "patika-6f52e",
+    "storage_bucket": "patika-6f52e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288473003287:android:db4019f078b12398f87352",
+        "android_client_info": {
+          "package_name": "com.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvVnUId1-LuP67o8OVCJeEpRm9Zo3mDow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

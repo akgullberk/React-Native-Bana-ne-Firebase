@@ -22,6 +22,7 @@ const Login = ({navigation}) => {
     try {
       setLoading(true)
       await auth().signInWithEmailAndPassword(formValues.usermail, formValues.password);
+      navigation.navigate('Messages')
     } catch (error) {
       console.log(error)
       showMessage({

@@ -1,7 +1,7 @@
 import {FlatList, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
-import { FloatingButton, Modal } from '../../components'
+import { FloatingButton, Modal,MessageCard } from '../../components'
 import database from '@react-native-firebase/database'
 import auth from '@react-native-firebase/auth'
 
@@ -14,9 +14,23 @@ const Messages = () => {
     .ref('messages/')
     .on("value",snapshot =>{
       const contentData = snapshot.val();
-      console.log(contentData)
+
+      if (!contentData) {
+        return
+      }
+      const parsedData = parseContentData(contentData)
+      setContentList(parsedData)
     });
   }, [])
+
+  const parseContentData = (data) => {
+    return Object.keys(data).map(key => {
+      return {
+        id: key,
+        ...data[key]
+      }
+    })
+  }
   
 
   const handleToggle = () => {
@@ -39,10 +53,13 @@ const Messages = () => {
       database().ref('messages/').push(contentObject)
   }
 
+  const renderContent = ({item}) => <MessageCard message={item} />
+
   return (
     <View>
       <FlatList
-
+        data={contentList}
+        renderItem={renderContent}
       />
       <FloatingButton onPress={handleToggle} />
       <Modal 

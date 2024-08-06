@@ -15,6 +15,7 @@
     "@react-native-firebase/database": "^20.3.0",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
+    "date-fns": "^3.6.0",
     "formik": "^2.4.6",
     "react": "18.2.0",
     "react-native": "0.74.4",

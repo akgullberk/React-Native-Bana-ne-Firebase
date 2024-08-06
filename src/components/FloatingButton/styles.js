@@ -6,7 +6,7 @@ const windowHeight = Dimensions.get('window').height;
 export const styles = StyleSheet.create({
     container:{
         position: 'absolute',
-        top: windowHeight * 0.88,
+        top: windowHeight * 0.8,
         right:20,
         borderRadius:50,
         width:60,

@@ -1,7 +1,7 @@
 import {FlatList, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
-import { FloatingButton, Modal,MessageCard } from '../../components'
+import { FloatingButton, Modal,MessageCard,Button } from '../../components'
 import database from '@react-native-firebase/database'
 import auth from '@react-native-firebase/auth'
 
@@ -56,7 +56,8 @@ const Messages = () => {
   const renderContent = ({item}) => <MessageCard message={item} />
 
   return (
-    <View>
+    <View style={styles.container}>
+      
       <FlatList
         data={contentList}
         renderItem={renderContent}

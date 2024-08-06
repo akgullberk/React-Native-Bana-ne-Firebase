@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import Navigation from './Navigation';
 import FlashMessage from "react-native-flash-message";
 
-const index = () => {
+
+const index = () => {  
   return (
         <NavigationContainer>
           <Navigation />

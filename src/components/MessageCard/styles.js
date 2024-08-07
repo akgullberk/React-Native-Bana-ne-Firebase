@@ -36,5 +36,37 @@ export const styles = StyleSheet.create({
         color: 'white',
         marginTop: windowHeight * 0.01,
         
+    },
+    dislike_container:{
+        backgroundColor: 'white',
+        width: windowWidth * 0.2,
+        borderRadius: windowHeight * 0.01,
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        height: windowHeight * 0.027,
+        
+        flexDirection: 'row',
+        
+    },
+    dislike_text:{
+        fontWeight: 'bold',
+        color: 'green',
+        
+    },
+    footer:{
+        bottom: windowHeight * 0.005,
+        
+        alignItems: 'flex-end',
+    },
+    dislike_count_container:{
+        
+        borderRadius: windowHeight * 0.01,
+        
+    },
+    dislike_count_text:{
+        color: 'green',
+        fontSize: windowHeight * 0.02,
+        fontWeight: 'bold',
+        
     }
 })

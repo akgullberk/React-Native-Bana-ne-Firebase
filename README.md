@@ -1,3 +1,32 @@
+# BANE NE?
+ 
+# Description
+ 
+Bana Ne? is a mobile application built to provide a social media experience where users can create accounts, log in, and exchange messages. The application leverages Firebase for authentication and real-time database functionalities. It includes a user-friendly interface for managing posts and messages.
+
+# Features
+
+- User Authentication: Sign up and log in using Firebase Authentication.
+  
+- Real-Time Messaging: Send and receive messages in real-time.
+- User Interface: Clean and intuitive UI with navigation between login, sign-up, and message screens.
+- Error Handling: User-friendly error messages with react-native-flash-message.
+- Responsive Design: Adaptable UI for various device sizes
+
+# Screenshots
+
+![Screenshot_20240808_153641](https://github.com/user-attachments/assets/2d26f23e-abc7-4cd4-890f-b38e90e10681)
+
+![Screenshot_20240808_153729](https://github.com/user-attachments/assets/652004b3-28cd-4e1e-b233-9932965bd2fa)
+
+![Screenshot_20240808_153801](https://github.com/user-attachments/assets/235dc30e-ebc1-4b67-986c-079556c5773d)
+
+![Screenshot_20240808_153815](https://github.com/user-attachments/assets/cba63085-7396-4e28-a044-0d3871b1b9b3)
+
+
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
